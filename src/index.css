@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/* Define the fadeInFromBottom animation */
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Start from 10px below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+/* Define the grow animation */
+.grow-animation {
+  animation: grow 1s ease-in-out forwards;
+  transform-origin: center; /* Change transform-origin to center */
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+html {
+  font-family: "Anton", serif;
+}
+
+body {
+  background-color: hsl(0, 0%, 97%);
+}
+
+/* list page sort animation */
+
+.vertical-reveal-animation {
+  animation: verticalReveal 0.8s ease-out forwards;
+  transform-origin: center;
+}
+
+@keyframes verticalReveal {
+  0% {
+    transform: scaleY(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* fade in - fade out */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* marquee */
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+}
+
+body {
+  overflow-x: hidden;
+}
