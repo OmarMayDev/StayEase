@@ -16,17 +16,16 @@ const App = () => {
     <div>
       <ApiProvider>
         <ScrollToTop />
-        <Router basename="/StayEase">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/SearchResults" element={<SearchResults />} />
-            <Route path="/AllHotels" element={<AllHotels />} />
-            <Route path="/HotelDetails" element={<HotelDetails />} />
-            <Route path="/About" element={<About />} />
-            <Route path="/Contact" element={<Contact />} />
-            <Route path="/Saved" element={<Saved />} />
-          </Routes>
-        </Router>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/SearchResults" element={<SearchResults />} />
+          <Route path="/AllHotels" element={<AllHotels />} />
+          <Route path="/HotelDetails" element={<HotelDetails />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Saved" element={<Saved />} />
+        </Routes>
       </ApiProvider>
     </div>
   );
