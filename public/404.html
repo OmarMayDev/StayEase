@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting...</title>
     <script>
-      // Preserve the URL path
-      var pathname = window.location.pathname;
-      var newPath = pathname.replace("/StayEase", "");
-      window.location.replace("/StayEase/index.html" + newPath);
+      (function () {
+        var pathname = window.location.pathname;
+
+        // Ensure we only redirect if we're not already on index.html
+        if (!pathname.includes("index.html")) {
+          var newPath = pathname.replace("/StayEase", ""); // Adjust for your repo
+          window.location.replace("/StayEase/index.html?redirect=" + newPath);
+        }
+      })();
     </script>
   </head>
   <body>
