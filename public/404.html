@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta http-equiv="refresh" content="0;url=/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      // Preserve the URL path
+      var pathname = window.location.pathname;
+      var newPath = pathname.replace("/StayEase", "");
+      window.location.replace("/StayEase/index.html" + newPath);
+    </script>
   </head>
   <body>
     <p>Redirecting...</p>
