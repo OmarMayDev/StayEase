@@ -11,7 +11,7 @@
         // Ensure we only redirect if we're not already on index.html
         if (!pathname.includes("index.html")) {
           var newPath = pathname.replace("/StayEase", ""); // Adjust for your repo
-          window.location.replace("/StayEase/index.html?redirect=" + newPath);
+          window.location.replace("/StayEase/" + newPath);
         }
       })();
     </script>
