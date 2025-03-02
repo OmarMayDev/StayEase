@@ -45,6 +45,7 @@ StayEase is a hotel booking platform that allows users to search for hotels, vie
 - Smooth animations and transitions
 - Functional forms for user input
 - Interactive slideshow for hotel images
+- Use of Static API to serve hotel data
 
 ## Project Structure
 
