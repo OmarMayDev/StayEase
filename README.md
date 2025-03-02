@@ -78,6 +78,8 @@ StayEase/
 - React
 - Vite
 - Tailwind CSS
+- React Router
+- Swiper
 
 ## License
 
