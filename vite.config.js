@@ -5,8 +5,5 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/StayEase/",
-  server: {
-    historyApiFallback: true, // Ensures proper routing on refresh
-  },
+  base: "/HOTELPROJECT/",
 });
