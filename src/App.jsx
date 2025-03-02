@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router";
+import { Route, Router, Routes } from "react-router";
 import Home from "./Pages/Home/Home";
 import { ApiProvider } from "./context/ApiContext";
 import SearchResults from "./Pages/SearchResults/SearchResults";
@@ -16,15 +16,17 @@ const App = () => {
     <div>
       <ApiProvider>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/SearchResults" element={<SearchResults />} />
-          <Route path="/AllHotels" element={<AllHotels />} />
-          <Route path="/HotelDetails" element={<HotelDetails />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/Saved" element={<Saved />} />
-        </Routes>
+        <Router basename="/StayEase">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/SearchResults" element={<SearchResults />} />
+            <Route path="/AllHotels" element={<AllHotels />} />
+            <Route path="/HotelDetails" element={<HotelDetails />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="/Saved" element={<Saved />} />
+          </Routes>
+        </Router>
       </ApiProvider>
     </div>
   );

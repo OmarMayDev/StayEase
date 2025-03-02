@@ -6,4 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "/StayEase/",
+  server: {
+    historyApiFallback: true, // Ensures proper routing on refresh
+  },
 });
