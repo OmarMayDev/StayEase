@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting...</title>
     <script>
-      (function () {
-        var pathname = window.location.pathname;
+      // Extract possible slug from the attempted URL
+      const currentUrl = window.location.href;
+      const indexOfLastSlash = currentUrl.lastIndexOf("/");
+      const possibleSlug = currentUrl.substr(indexOfLastSlash + 1);
 
-        // Ensure we only redirect if we're not already on index.html
-        if (!pathname.includes("index.html")) {
-          var newPath = pathname.replace("/StayEase", ""); // Adjust for your repo
-          window.location.replace("/StayEase/" + newPath);
-        }
-      })();
+      // Redirect to homepage with possible slug as search parameter
+      if (currentUrl) {
+        window.location.href = `/StayEase?redirect=${encodeURIComponent(
+          possibleSlug
+        )}`;
+      } else {
+        window.location.href = "/StayEase";
+      }
     </script>
   </head>
   <body>
