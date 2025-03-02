@@ -98,10 +98,7 @@ const FilterSideBar = () => {
                 ? "bg-[#dd3842] border-none"
                 : "bg-white border-2 border-gray-500"
             }`}
-            onClick={() => {
-              const timestamp = new Date().getTime();
-              window.location.href = window.location.href + "?t=" + timestamp;
-            }}
+            onClick={() => window.location.reload()}
           >
             {isAllChecked ? <IoCheckmark color="white" /> : null}
             <input type="checkbox" name="blackBox" className="hidden" />
