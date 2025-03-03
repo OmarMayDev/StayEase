@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useApiContext } from "../../../context/ApiContext";
-import { useState } from "react";
 import { IoCheckmark } from "react-icons/io5";
+import { Range } from "react-range";
+import PriceRangeSlider from "./PriceRangeSlider";
+import { filter } from "framer-motion/client";
 
 const FilterSideBar = () => {
   const [filterCheckRed, setFilterCheckRed] = useState(true);
   const [filterCheckBlack, setFilterCheckBlack] = useState(false);
+  const [isZero, setIsZero] = useState(false);
 
-  const { cardApiFinal, citiesApi, setcitiesApi, isAllChecked, setList, list } =
-    useApiContext();
+  const {
+    cardApiFinal,
+    citiesApi,
+    setcitiesApi,
+    isAllChecked,
+    setList,
+    list,
+    values,
+    currentPage,
+    setCurrentPage,
+  } = useApiContext();
 
   const handleRedClick = () => {
     setFilterCheckRed(true);
@@ -25,7 +37,6 @@ const FilterSideBar = () => {
     setList(sortedList);
   };
 
-  //new
   const handleBlackClick = () => {
     setFilterCheckBlack(true);
     setFilterCheckRed(false);
@@ -40,9 +51,63 @@ const FilterSideBar = () => {
 
     setList(sortedList);
   };
+  console.log("chceking", list);
+
+  useEffect(() => {
+    const filteredListSet = cardApiFinal.filter((api) => citiesApi[api.city]);
+    setCurrentPage(1);
+
+    if (filteredListSet.length === 0) {
+      if (!cardApiFinal || cardApiFinal.length === 0) return;
+
+      // Always filter based on the original cardApiFinal
+      const filteredList = cardApiFinal
+        .map((city) => ({
+          ...city,
+          hotels: city.hotels.filter((hotel) => {
+            const str = hotel.price;
+            const match = str.match(/\$(\d+)/);
+            const number = match ? parseInt(match[1], 10) : null;
+            return number >= values[0] && number <= values[1];
+          }),
+        }))
+        .filter((city) => city.hotels.length > 0); // Remove cities with no hotels
+
+      if (filteredList.length === 0) {
+        setIsZero(true); // Set isZero to true if filteredList is empty
+      } else {
+        setIsZero(false); // Set isZero to false if filteredList is not empty
+      }
+
+      setList(filteredList); // Set the updated list based on the price range
+      console.log("Filtered List:", filteredList); // For debugging
+    } else {
+      // Always filter based on the original cardApiFinal
+      const filteredList = filteredListSet
+        .map((city) => ({
+          ...city,
+          hotels: city.hotels.filter((hotel) => {
+            const str = hotel.price;
+            const match = str.match(/\$(\d+)/);
+            const number = match ? parseInt(match[1], 10) : null;
+            return number >= values[0] && number <= values[1];
+          }),
+        }))
+        .filter((city) => city.hotels.length > 0); // Remove cities with no hotels
+
+      if (filteredList.length === 0) {
+        setIsZero(true); // Set isZero to true if filteredList is empty
+      } else {
+        setIsZero(false); // Set isZero to false if filteredList is not empty
+      }
+
+      setList(filteredList); // Set the updated list based on the price range
+      console.log("Filtered List:", filteredList); // For debugging
+    }
+  }, [values]); // Re-run whenever the price values change
 
   return (
-    <div className="flex flex-col gap-[20px] min-w-[300px] xl:max-h-screen p-[15px] transition-all transform opacity-0  duration-900 ease-out animate-[fadeInFromBottom_1s_ease-out_forwards]">
+    <div className="flex flex-col gap-[20px] min-w-[300px] xl:max-h-full p-[15px] transition-all transform opacity-0  duration-900 ease-out animate-[fadeInFromBottom_1s_ease-out_forwards]">
       <div className="flex flex-col gap-[20px]">
         <div className="text-[30px]">SORT HOTELS BY</div>
         <div className="flex flex-col gap-[5px]">
@@ -86,6 +151,15 @@ const FilterSideBar = () => {
             </label>
           </form>
         </div>
+      </div>
+      {/* money slider */}
+      <PriceRangeSlider />
+      <div
+        className={`text-[#dd3842] transition-all transform opacity-0  duration-900 ease-out animate-[fadeInFromBottom_1s_ease-out_forwards] ${
+          isZero ? "block" : "hidden"
+        }`}
+      >
+        No hotels to display based on price
       </div>
       {/* select city */}
       <div className="text-[30px]">SELECT CITY</div>

@@ -7,14 +7,16 @@ import { useApiContext } from "../../../context/ApiContext";
 const HotelsDisplay = () => {
   const {
     cardApiFinal,
-
+    click,
     setDetails,
     citiesApi,
-
+    values,
     isAllChecked,
     setisAllChecked,
     setList,
     list,
+    currentPage,
+    setCurrentPage,
   } = useApiContext();
 
   const navigate = useNavigate();
@@ -38,7 +40,7 @@ const HotelsDisplay = () => {
     }
 
     setCurrentPage(1);
-  }, [citiesApi, isAllChecked]);
+  }, [citiesApi, isAllChecked, click]);
 
   //handle viewDetilas
   const handleView = (hotel) => {
@@ -47,7 +49,7 @@ const HotelsDisplay = () => {
   };
 
   //set states
-  const [currentPage, setCurrentPage] = useState(1);
+
   const [postPerPage, setPostPerPage] = useState(3);
 
   const lastPostIndex = currentPage * postPerPage;
@@ -57,15 +59,22 @@ const HotelsDisplay = () => {
   const currentPost = list.slice(firstPostIndex, lastPostIndex);
 
   //set page numbers
-  let pages = [];
+  const [pages, setPages] = useState([]);
 
-  for (let i = 1; Math.ceil(i <= list.length / postPerPage); i++) {
-    pages.push(i);
-  }
+  useEffect(() => {
+    let newPages = [];
+    for (let i = 1; i <= Math.ceil(list.length / postPerPage); i++) {
+      newPages.push(i);
+    }
+    setPages(newPages);
+  }, [list, values, postPerPage]); // Recalculate when `list` or `postPerPage` changes
 
   const ScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  //handle money slider
+
   return (
     <div className="flex flex-col xl:w-[935px] lg:gap-[20px]">
       {/* titlePic */}

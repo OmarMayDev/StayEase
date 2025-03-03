@@ -68,6 +68,7 @@ export const ApiProvider = ({ children }) => {
           id: 1,
           name: "Hotel Deluxia Center",
           image: newOne,
+          alt: "Hotel Deluxia Center - A luxurious 4-star hotel in the heart of Barcelona.",
           description: "A luxurious 4-star hotel in the heart of Barcelona.",
           price: "$150/night",
           location: "Central Barcelona, Spain",
@@ -76,6 +77,7 @@ export const ApiProvider = ({ children }) => {
           id: 2,
           name: "Hotel El Palace",
           image: pic2,
+          alt: "Hotel El Palace - Classic hotel with old-world charm, near the beach.",
           description: "Classic hotel with old-world charm, near the beach.",
           price: "$300/night",
           location: "Barcelona Beachfront, Spain",
@@ -91,6 +93,7 @@ export const ApiProvider = ({ children }) => {
           id: 1,
           name: "The Edgewater Hotel",
           image: pic3,
+          alt: "The Edgewater Hotel - Waterfront hotel offering stunning views of the Puget Sound.",
           description:
             "Waterfront hotel offering stunning views of the Puget Sound.",
           price: "$180/night",
@@ -100,6 +103,7 @@ export const ApiProvider = ({ children }) => {
           id: 2,
           name: "Hotel Sorrento",
           image: pic4,
+          alt: "Hotel Sorrento - Elegant and stylish hotel with a blend of classic and modern.",
           description:
             "Elegant and stylish hotel with a blend of classic and modern.",
           price: "$220/night",
@@ -109,6 +113,7 @@ export const ApiProvider = ({ children }) => {
           id: 3,
           name: "The Fairmont Olympic",
           image: pic5,
+          alt: "The Fairmont Olympic - A historic hotel with old-world charm.",
           description: "A historic hotel with old-world charm.",
           price: "$350/night",
           location: "Seattle, USA",
@@ -117,6 +122,7 @@ export const ApiProvider = ({ children }) => {
           id: 4,
           name: "The Arctic Club",
           image: pic6,
+          alt: "The Arctic Club - Stylish hotel with a unique Alaskan theme.",
           description: "Stylish hotel with a unique Alaskan theme.",
           price: "$230/night",
           location: "Downtown Seattle, USA",
@@ -125,6 +131,7 @@ export const ApiProvider = ({ children }) => {
           id: 5,
           name: "The Inn at the Market",
           image: pic7,
+          alt: "The Inn at the Market - Charming hotel with a market view.",
           description: "Charming hotel with a market view.",
           price: "$250/night",
           location: "Seattle Pike Place Market, USA",
@@ -140,8 +147,9 @@ export const ApiProvider = ({ children }) => {
           id: 1,
           name: "Hotel Yak & Yeti",
           image: pic8,
+          alt: "Hotel Yak & Yeti - A five-star hotel offering stunning views of the Himalayas.",
           description:
-            "A five-star hotel in the heart of Kathmandu offering stunning views of the Himalayas.",
+            "A five-star hotel offering stunning views of the Himalayas.",
           price: "$130/night",
           location: "Kathmandu, Nepal",
         },
@@ -156,6 +164,7 @@ export const ApiProvider = ({ children }) => {
           id: 1,
           name: "Hotel Savoy",
           image: pic9,
+          alt: "Hotel Savoy - Luxury hotel in the heart of Florence, near major attractions.",
           description:
             "Luxury hotel in the heart of Florence, near major attractions.",
           price: "$450/night",
@@ -165,6 +174,7 @@ export const ApiProvider = ({ children }) => {
           id: 2,
           name: "Hotel Lungarno",
           image: picTen,
+          alt: "Hotel Lungarno - Luxury hotel with beautiful views of the Arno River.",
           description: "Luxury hotel with beautiful views of the Arno River.",
           price: "$500/night",
           location: "Florence, Italy",
@@ -173,6 +183,7 @@ export const ApiProvider = ({ children }) => {
           id: 3,
           name: "Hotel Plaza Lucchesi",
           image: picEleven,
+          alt: "Hotel Plaza Lucchesi - Historic hotel with charming rooms and rooftop bar.",
           description: "Historic hotel with charming rooms and rooftop bar.",
           price: "$320/night",
           location: "Florence, Italy",
@@ -181,6 +192,7 @@ export const ApiProvider = ({ children }) => {
           id: 4,
           name: "The Westin Excelsior",
           image: picTwelve,
+          alt: "The Westin Excelsior - Elegant hotel with scenic river views.",
           description: "Elegant hotel with scenic river views.",
           price: "$380/night",
           location: "Florence, Italy",
@@ -189,6 +201,7 @@ export const ApiProvider = ({ children }) => {
           id: 5,
           name: "Four Seasons Hotel Florence",
           image: picThrenteen,
+          alt: "Four Seasons Hotel Florence - Upscale hotel with lush gardens and a relaxing atmosphere.",
           description:
             "Upscale hotel with lush gardens and a relaxing atmosphere.",
           price: "$700/night",
@@ -198,6 +211,7 @@ export const ApiProvider = ({ children }) => {
           id: 6,
           name: "Villa Cora",
           image: picFourteen,
+          alt: "Villa Cora - Boutique hotel with a rich historical background and opulent decor.",
           description:
             "Boutique hotel with a rich historical background and opulent decor.",
           price: "$550/night",
@@ -207,6 +221,7 @@ export const ApiProvider = ({ children }) => {
           id: 7,
           name: "Hotel Berchielli",
           image: picFifteen,
+          alt: "Hotel Berchielli - Classic hotel with luxury rooms and modern amenities.",
           description: "Classic hotel with luxury rooms and modern amenities.",
           price: "$400/night",
           location: "Florence, Italy",
@@ -222,6 +237,7 @@ export const ApiProvider = ({ children }) => {
           id: 1,
           name: "Marina Bay Sands",
           image: picSixteen,
+          alt: "Marina Bay Sands - Iconic hotel with a rooftop infinity pool and city views.",
           description:
             "Iconic hotel with a rooftop infinity pool and city views.",
           price: "$500/night",
@@ -231,6 +247,7 @@ export const ApiProvider = ({ children }) => {
           id: 2,
           name: "Raffles Hotel Singapore",
           image: picEighteen,
+          alt: "Raffles Hotel Singapore - Historic luxury hotel offering top-notch services.",
           description: "Historic luxury hotel offering top-notch services.",
           price: "$700/night",
           location: "Singapore",
@@ -246,6 +263,7 @@ export const ApiProvider = ({ children }) => {
           id: 1,
           name: "Hotel Sacher",
           image: picNineteen,
+          alt: "Hotel Sacher - Luxury hotel with historic charm, home to the famous Sachertorte.",
           description:
             "Luxury hotel with historic charm, home to the famous Sachertorte.",
           price: "$600/night",
@@ -255,6 +273,7 @@ export const ApiProvider = ({ children }) => {
           id: 2,
           name: "The Ritz-Carlton Vienna",
           image: picTwenty,
+          alt: "The Ritz-Carlton Vienna - Elegant hotel with impeccable service and a central location.",
           description:
             "Elegant hotel with impeccable service and a central location.",
           price: "$650/night",
@@ -271,6 +290,7 @@ export const ApiProvider = ({ children }) => {
           id: 1,
           name: "The Varsity Hotel & Spa",
           image: picTwentyOne,
+          alt: "The Varsity Hotel & Spa - Contemporary hotel with stunning views of Cambridge.",
           description: "Contemporary hotel with stunning views of Cambridge.",
           price: "$220/night",
           location: "Cambridge, UK",
@@ -279,6 +299,7 @@ export const ApiProvider = ({ children }) => {
           id: 2,
           name: "The Gonville Hotel",
           image: picTwentytwo,
+          alt: "The Gonville Hotel - Stylish hotel with excellent facilities and city views.",
           description:
             "Stylish hotel with excellent facilities and city views.",
           price: "$250/night",
@@ -295,6 +316,7 @@ export const ApiProvider = ({ children }) => {
           id: 1,
           name: "One&Only Cape Town",
           image: picTwentyThree,
+          alt: "One&Only Cape Town - Luxury hotel offering stunning views of Table Mountain.",
           description:
             "Luxury hotel offering stunning views of Table Mountain.",
           price: "$500/night",
@@ -311,6 +333,7 @@ export const ApiProvider = ({ children }) => {
           id: 1,
           name: "The Nines, a Luxury Collection Hotel",
           image: picTwentyFour,
+          alt: "The Nines, a Luxury Collection Hotel - Stylish luxury hotel in the heart of Portland.",
           description: "Stylish luxury hotel in the heart of Portland.",
           price: "$300/night",
           location: "Portland, USA",
@@ -319,6 +342,7 @@ export const ApiProvider = ({ children }) => {
           id: 2,
           name: "Hotel deLuxe",
           image: picTwentyFive,
+          alt: "Hotel deLuxe - Vintage-inspired boutique hotel with modern amenities.",
           description: "Vintage-inspired boutique hotel with modern amenities.",
           price: "$220/night",
           location: "Portland, USA",
@@ -327,6 +351,7 @@ export const ApiProvider = ({ children }) => {
           id: 3,
           name: "The Heathman Hotel",
           image: picTwentySix,
+          alt: "The Heathman Hotel - Historic hotel with luxury rooms and a central location.",
           description:
             "Historic hotel with luxury rooms and a central location.",
           price: "$250/night",
@@ -343,6 +368,7 @@ export const ApiProvider = ({ children }) => {
           id: 1,
           name: "The Post Oak Hotel",
           image: picTwentyEight,
+          alt: "The Post Oak Hotel - Luxury hotel with modern amenities and a central location.",
           description:
             "Luxury hotel with modern amenities and a central location.",
           price: "$450/night",
@@ -352,6 +378,7 @@ export const ApiProvider = ({ children }) => {
           id: 2,
           name: "Hotel Zaza",
           image: picTwentyNine,
+          alt: "Hotel Zaza - Chic and stylish hotel with upscale rooms.",
           description: "Chic and stylish hotel with upscale rooms.",
           price: "$400/night",
           location: "Houston, USA",
@@ -360,6 +387,7 @@ export const ApiProvider = ({ children }) => {
           id: 3,
           name: "The St. Regis Houston",
           image: picTherty,
+          alt: "The St. Regis Houston - Elegant hotel offering first-class service.",
           description: "Elegant hotel offering first-class service.",
           price: "$500/night",
           location: "Houston, USA",
@@ -428,16 +456,19 @@ export const ApiProvider = ({ children }) => {
       name: "Mark Andrew",
       post: "This site is a fantastic resource for finding hotels. Their search filters are incredibly detailed, and the photos are stunning. It's the perfect place to start your hotel research, but keep in mind that you'll need to book directly with the hotel.",
       pic: "https://cdn.prod.website-files.com/66e96a440f831f93d1b5a8ff/66eaa67289cb6ece78ad82d7_Ellipse%20165%20(1).webp",
+      alt: "Profile Pic",
     },
     {
       name: "Jane Doe",
       post: "I love using this site to browse hotels and get inspiration for my next trip. The search functionality is top-notch, and the website is beautifully designed. I can easily filter by price, amenities, and even neighborhood. It's a great tool for discovering hidden gems, but remember to contact the hotel directly for reservations.",
       pic: "https://cdn.prod.website-files.com/66e96a440f831f93d1b5a8ff/66eaa67689cb6ece78ad843c_image.webp",
+      alt: "Profile Pic",
     },
     {
       name: "John Smith",
       post: "This hotel site is a dream for travel enthusiasts! I spend hours exploring the site, browsing through amazing hotels and dreaming of my next adventure. The photos are incredible, and the descriptions are so enticing. It's the best place to start your hotel research.",
       pic: "https://cdn.prod.website-files.com/66e96a440f831f93d1b5a8ff/66eaa67389cb6ece78ad834b_Ellipse%20131.webp",
+      alt: "Profile Pic",
     },
   ];
 
@@ -446,22 +477,27 @@ export const ApiProvider = ({ children }) => {
     {
       id: 1,
       pic: "https://cdn.prod.website-files.com/66e96a440f831f93d1b5a8ff/66eaa2e26bb7795aef363fe7_Frame-1.webp",
+      alt: "Fake logo",
     },
     {
       id: 2,
       pic: "https://cdn.prod.website-files.com/66e96a440f831f93d1b5a8ff/66eaa2e16bb7795aef363e2a_logo-53.webp",
+      alt: "Fake logo",
     },
     {
       id: 3,
       pic: "https://cdn.prod.website-files.com/66e96a440f831f93d1b5a8ff/66eaa2e26bb7795aef364017_logo-78.webp",
+      alt: "Fake logo",
     },
     {
       id: 4,
       pic: "https://cdn.prod.website-files.com/66e96a440f831f93d1b5a8ff/66eaa2e16bb7795aef363e00_Frame.webp",
+      alt: "Fake logo",
     },
     {
       id: 5,
       pic: "https://cdn.prod.website-files.com/66e96a440f831f93d1b5a8ff/66eaa2e16bb7795aef363e2a_logo-53.webp",
+      alt: "Fake logo",
     },
   ];
 
@@ -482,6 +518,8 @@ export const ApiProvider = ({ children }) => {
   //state for list in allhotels
   const [list, setList] = useState(cardApiFinal);
   const [isAllChecked, setisAllChecked] = useState(true);
+  const [click, setClick] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   //random pics static api for hotelDetails
   const randomPics = [
@@ -538,9 +576,17 @@ export const ApiProvider = ({ children }) => {
     localStorage.setItem("savedHotels", JSON.stringify(savedHotels));
   }, [savedHotels]);
 
+  const [values, setValues] = useState([150, 750]);
+
   return (
     <ApiContext.Provider
       value={{
+        currentPage,
+        setCurrentPage,
+        click,
+        setClick,
+        values,
+        setValues,
         savedHotels,
         setSavedHotels,
         swiperRef,

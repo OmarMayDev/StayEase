@@ -8,6 +8,7 @@ import { useNavigate } from "react-router";
 import SlideShow from "./Components/SlideShow";
 import SlideShowOverlay from "./Components/SlideShowOverlay";
 import Description from "./Components/Description";
+import { Helmet } from "react-helmet-async";
 
 const HotelDetails = () => {
   //use apiContext
@@ -25,6 +26,14 @@ const HotelDetails = () => {
 
   return (
     <div className="overflow-y-hidden ">
+      <Helmet>
+        <title>Home Details - StayEase Hotel Website </title>
+        <meta
+          name="description"
+          content="This is the hotel details page of StayEase."
+        />
+        <meta name="keywords" content="React, Vite, Web App" />
+      </Helmet>
       <SlideShowOverlay />
       <Header />
       <Navigation label="Hotel Details" />

@@ -1,15 +1,56 @@
 import React from "react";
 import { useApiContext } from "../../../context/ApiContext";
 import { useState } from "react";
+import Select from "react-select";
 
 const Search = () => {
-  const { searchData, setSearchData } = useApiContext();
+  const { searchData, setSearchData, cardApiFinal } = useApiContext();
   const [userSeached, setUserSearched] = useState(searchData);
 
   //handle search submit
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     setSearchData(userSeached);
+  };
+
+  //handle autocomplete
+  // Generate dynamic options based on cardApiFinal
+  const dynamicOptions = cardApiFinal
+    .map((card) =>
+      card.hotels.map((hotel) => ({
+        value: hotel.name, // Assuming `hotel.city` contains the city name
+        label: hotel.name,
+      }))
+    )
+    .flat(); // Flatten the nested array
+
+  const cityNames = cardApiFinal.map((card) => ({
+    value: card.city,
+    label: card.city,
+  }));
+
+  // Combine static and dynamic options
+  const options = [...cityNames, ...dynamicOptions];
+
+  const customStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      backgroundColor: "#e6e6e6",
+      borderColor: state.isFocused ? "red" : "#9ca3af",
+      borderRadius: "5px",
+      minHeight: "54px",
+      paddingLeft: "10px",
+      boxShadow: state.isFocused ? "0 0 0 2px rgba(220, 38, 38, 0.5)" : "none",
+      "&:hover": {
+        borderColor: "red",
+      },
+    }),
+    placeholder: (provided) => ({
+      ...provided,
+      color: "black",
+      fontSize: "14px",
+      fontFamily: "serif",
+    }),
   };
   return (
     <form
@@ -22,11 +63,14 @@ const Search = () => {
       <div className="text-[#333333] text-[20px] font-[700] font-sans">
         Search
       </div>
-      <input
-        onChange={(v) => setUserSearched(v.target.value)}
-        type="text"
-        placeholder={searchData}
-        className="min-w-[290px] h-[54px] bg-[#e6e6e6] border border-gray-400 rounded-[5px] placeholder: focus:outline-red-600 placeholder:text-[14px] font-serif pl-[10px] placeholder:text-black"
+
+      <Select
+        options={options}
+        isSearchable
+        openMenuOnClick={false}
+        onChange={(v) => setUserSearched(v.value)}
+        styles={customStyles}
+        className="min-w-[290px]"
       />
       <button
         type="submit"
