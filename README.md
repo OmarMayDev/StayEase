@@ -46,6 +46,10 @@ StayEase is a hotel booking platform that allows users to search for hotels, vie
 - Functional forms for user input
 - Interactive slideshow for hotel images
 - Use of Static API to serve hotel data
+- Filter hotels by price
+- Filter hotels by New to Old and Old to New
+- Select cities by checkbox
+- Seach page with autocomplete search bar
 
 ## Project Structure
 
@@ -80,6 +84,8 @@ StayEase/
 - Tailwind CSS
 - React Router
 - Swiper
+- React-Helment
+- React-Select
 
 ## License
 
